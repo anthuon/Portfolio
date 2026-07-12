@@ -49,7 +49,7 @@ form.addEventListener('submit', event => {
   const subject = encodeURIComponent(`Projektanfrage: ${data.get('project')}`);
   const body = encodeURIComponent(`Hallo Anton,\n\nmein Name ist ${data.get('name')}.\n\n${data.get('message')}\n\nDu erreichst mich unter: ${data.get('email')}`);
   status.textContent = 'Deine E-Mail-App wird geöffnet …';
-  window.location.href = `mailto:antonopillath@gmail.com?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:kontakt@antonpillath.de?subject=${subject}&body=${body}`;
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
