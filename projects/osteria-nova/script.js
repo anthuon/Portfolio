@@ -26,6 +26,14 @@ document.querySelector('#booking-form').addEventListener('submit', event => {
 
 document.querySelector('#year').textContent = new Date().getFullYear();
 
+const mapButton = document.querySelector('#load-map');
+const mapFrame = document.querySelector('.map-wrap iframe');
+mapButton.addEventListener('click', () => {
+  mapFrame.src = mapFrame.dataset.src;
+  mapFrame.hidden = false;
+  mapButton.remove();
+});
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -36,4 +44,3 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
-
